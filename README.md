@@ -44,14 +44,14 @@ elements. So basically, we can imagine a tree upside down.
 ![DOM Tree Graphic](https://curriculum-content.s3.amazonaws.com/skills-front-end-web-development/js-dom-and-events-the-dom-is-a-tree-readme/DOM-model.svg)
 
 ## Describe How the DOM Works as a Tree
-An interesting property of trees is that every tree can contain subtrees,
-which we can treat independently of their parent trees. Subtrees are like branches. 
 
-Practically speaking, the DOM begins at `<html>`, but we should avoid changing
-what's between the `<head></head>` tags. Most of the time, we will look at the
-DOM subtree with its root at `<body>` and only deal with things that will be
-visible on the page. Within that tree, we might also deal with subtrees. So, for
-example, if we have
+Every tree can contain subtrees, which we can treat independently of their
+parent trees. Subtrees are like branches. 
+
+Practically speaking, the DOM begins at `<html>`, but for now we should avoid
+changing what's between the `<head></head>` tags. Most of the time, we will look
+at the DOM subtree with its root at `<body>` and only change things that will be
+visible on the page. We might also deal with subtrees. For example, if we have
 
 ``` html
 <body>
@@ -65,7 +65,7 @@ example, if we have
 </body>
 ```
 
-We would have a tree that looks like
+Our tree looks like this:
 
 ``` shell
         body
@@ -77,7 +77,7 @@ We would have a tree that looks like
  "Hi!"        "Bye!"
 ```
 
-Pretty simple, right? Similarly, if we had a DOM subtree that looked like
+Similarly, if we had a DOM subtree that looked like
 
 ``` html
 <div>
@@ -91,7 +91,7 @@ Pretty simple, right? Similarly, if we had a DOM subtree that looked like
 </div>
 ```
 
-We could simply treat it as the tree
+The tree would look like: 
 
 ``` shell
          div
@@ -103,7 +103,7 @@ We could simply treat it as the tree
  "Hello!"     "Sup?"
 ```
 
-## Ask the DOM To Find Or "select" An HTML Element or Elements in the Rendered Page
+## Ask the DOM to Find or "select" an HTML Element or Elements in the Rendered Page
 
 Our tree is organized so that a node's metadata doesn't make it harder to find it's children. Not only does providing more information about
 a node via HTML make it more useful, it also makes it easier to find.
@@ -119,8 +119,8 @@ ways, courtesy of the `document` object.
 #### `document.getElementById()`
 
 This method provides the quickest access to a node, but it requires that we know
-a very specific piece of information — its `id`. This method can only return one
-element, since CSS IDs are expected to be unique.
+a very specific piece of information — it's `id`. This method can only return one
+element, since CSS `id`s are expected to be unique.
 
 Given the following DOM tree:
 
@@ -132,8 +132,9 @@ Given the following DOM tree:
 
 We could find the `h5` element with `document.getElementById('greeting')`.
 Notice how the `id` that we pass to `getElementById` is identical to the `id` in
-`<h5 id="greeting">`. You can use either single('') or double("") quotes around
-the `id`, as long as you use the same kind to open and close them!
+`<h5 id="greeting">`. 
+_Note: You can use either single('') or double("") quotes around
+the `id` within the `id` in `document.getElementById('yourIDGoesHere')`, as long as you use the same kind to open and close them!_
 
 **Try it out!**
 
@@ -142,6 +143,7 @@ Then open up your console, type `document.getElementById('theIdYouTookNoteOf')`,
 and check out your handy-dandy DOM node.
 
 #### `document.getElementsByClassName()`
+
 This one is also very commonly used in DOM programming.
 
 This method finds elements by their `className`. Unlike the previous method,
@@ -197,6 +199,7 @@ Explore the DOM in console by typing `document.getElementsByTagName('div')`.
 You can iterate through these elements using a simple `for` loop as well.
 
 ### Finding a Node Without Knowing Anything About It
+
 What if we know next to nothing about an element? Or what if we're just
 interested in finding out more about the child nodes of a given element? This
 is where our knowledge of trees comes in handy!
@@ -225,7 +228,7 @@ Given the following DOM tree:
 
 How would we go about changing only the second "Hello!" to "Goodbye!"?
 
-Here we're going to use a hodgepodge of `methods` to accomplish the goal.
+Here we're going to use a mix of different `methods` to accomplish the goal.
 
 Let's start by getting the `<main>` element
 
