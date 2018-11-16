@@ -29,7 +29,7 @@ To understand those `methods`, we first need to talk about how the DOM tree
 DOM's `methods` find the right nodes.
 
 
-## Define the Computer Science Version of "Tree"
+### Define the Computer Science Version of "Tree"
 
 What do we mean when we say that the DOM is a tree? Trees make a good metaphor
 for the DOM because almost everyone has seen a tree. Starting at the bottom, you
@@ -43,7 +43,7 @@ elements. So basically, we can imagine a tree upside down.
 
 ![DOM Tree Graphic](https://curriculum-content.s3.amazonaws.com/skills-front-end-web-development/js-dom-and-events-the-dom-is-a-tree-readme/DOM-model.svg)
 
-## Describe How the DOM Works as a Tree
+### Describe How the DOM Works as a Tree
 
 Every tree can contain subtrees, which we can treat independently of their
 parent trees. Subtrees are like branches. 
@@ -103,7 +103,7 @@ The tree would look like:
  "Hello!"     "Sup?"
 ```
 
-## Ask the DOM to Find or "select" an HTML Element or Elements in the Rendered Page
+### Ask the DOM to Find or "select" an HTML Element or Elements in the Rendered Page
 
 Our tree is organized so that a node's metadata doesn't make it harder to find it's children. Not only does providing more information about
 a node via HTML make it more useful, it also makes it easier to find.
@@ -111,12 +111,12 @@ a node via HTML make it more useful, it also makes it easier to find.
 For the following exercises, you can experiment with any page on the
 Internet. It's fun to change "The New York Times" or Facebook.
 
-### Finding a Node
+#### Finding a Node
 
 JavaScript exposes a few ways of finding DOM nodes directly, or via other
 ways, courtesy of the `document` object.
 
-#### `document.getElementById()`
+##### `document.getElementById()`
 
 This method provides the quickest access to a node, but it requires that we know
 a very specific piece of information — it's `id`. This method can only return one
@@ -124,7 +124,7 @@ element, since CSS `id`s are expected to be unique.
 
 Given the following DOM tree:
 
-``` html
+```html
 <div>
   <h5 id="greeting">Hello!</h5>
 </div>
@@ -185,7 +185,6 @@ doing so much easier if you save the results of
 `document.getElementsByClassName()` to a variable: `var elements =
 document.getElementsByClassName('yourClassNameHere')`.
 
-
 #### `document.getElementsByTagName()`
 
 If you don't know an element's `id` or `class`, but you do know its tag
@@ -198,7 +197,7 @@ an `HTMLCollection` also.
 Explore the DOM in console by typing `document.getElementsByTagName('div')`.
 You can iterate through these elements using a simple `for` loop as well.
 
-### Finding a Node Without Knowing Anything About It
+#### Finding a Node Without Knowing Anything About It
 
 What if we know next to nothing about an element? Or what if we're just
 interested in finding out more about the child nodes of a given element? This
@@ -206,7 +205,7 @@ is where our knowledge of trees comes in handy!
 
 Given the following DOM tree:
 
-``` html
+```html
 <main>
   <div>
     <div>
@@ -232,20 +231,20 @@ Here we're going to use a mix of different `methods` to accomplish the goal.
 
 Let's start by getting the `<main>` element
 
-``` javascript
+```javascript
 const main = document.getElementsByTagName('main')[0]
 ```
 
 Then we can get the children of `main` using `main.children`, so we can get the
 second child with `main.children[1]`.
 
-``` javascript
+```javascript
 const div = main.children[1]
 ```
 
 Finally, we can get and update our `<p>` element with
 
-``` javascript
+```javascript
 // we can call getElementsByTagName() on an _element_
 // to constrain the search to its children!
 const p = div.getElementsByTagName('p')[0]
@@ -274,3 +273,5 @@ user experience.
 ## Resources
 
 - [MDN - Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/fewpjs-the-dom-tree'>The DOM Tree</a> on Learn.co and start learning to code for free.</p>
