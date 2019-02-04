@@ -61,7 +61,11 @@ The HTML for this "tree" would be:
 ### Describe How the DOM Works as a Tree
 
 Every tree can contain subtrees, which we can treat independently of their
-parent trees. Subtrees are like branches. 
+parent trees. Despite just being a small part of a larger tree, they repeat the
+pattern and appearance of the full tree, despite being a smaller part of a tree:
+like branches. Every child has experienced this sense of wonder when they take a
+fallen branch and stick it in the ground and think that they've planted their
+own tree.
 
 Practically speaking, the DOM begins at `<html>`, but for now we should avoid
 changing what's between the `<head></head>` tags. Most of the time, we will look
@@ -120,7 +124,8 @@ The tree would look like:
 
 ### Ask the DOM to Find or "select" an HTML Element or Elements in the Rendered Page
 
-Our tree is organized so that a node's metadata doesn't make it harder to find it's children. Not only does providing more information about
+Our tree is organized so that a node's metadata doesn't make it harder to find its
+children. Not only does providing more information about
 a node via HTML make it more useful, it also makes it easier to find.
 
 For the following exercises, you can experiment with any page on the
@@ -146,8 +151,10 @@ Given the following DOM tree:
 ```
 
 We could find the `h5` element with `document.getElementById('greeting')`.
+
 Notice how the `id` that we pass to `getElementById` is identical to the `id` in
 `<h5 id="greeting">`. 
+
 _Note: You can use either single('') or double("") quotes around
 the `id` within the `id` in `document.getElementById('yourIDGoesHere')`, as long as you use the same kind to open and close them!_
 
@@ -202,7 +209,7 @@ document.getElementsByClassName('yourClassNameHere')`.
 
 #### `document.getElementsByTagName()`
 
-If you don't know an element's `id` or `class`, but you do know its tag
+If you _don't_ know an element's `id` or `class`, but you _do_ know its tag
 name (the tag name is the thing between the `<>`, e.g., `'div'`, `'h1'`,
 `header`, `article` etc.).  Since tag names aren't unique, this method returns
 an `HTMLCollection` also.
@@ -265,9 +272,7 @@ Finally, we can get and update our `<p>` element with
 const p = div.getElementsByTagName('p')[0]
 ```
 
-And lastly we can change an attribute on the node. Elsewhere we've shown how to
-remove nodes. In this lesson we both get better at finding them and we
-change one's attribute!
+And lastly we can change an attribute on the node. Let's change one's attribute!
 
 ```javascript
 p.textContent = "Goodbye!"
