@@ -15,19 +15,20 @@ DOM programming is using JavaScript to:
 3. Adjust a property of the selected element(s)
 
 In previous lessons we were given the command to find the HTML element we
-wanted to delete:
+wanted:
 
 ```javascript
-document.querySelector( selector ).remove()
+document.querySelector(selector)
 ```
 
-In this lesson, we'll learn the `methods` on the DOM we need to use to `select` the HTML element(s) we want to change. In later lessons we'll learn
-other methods, like `remove()`, to change the elements.
+The _selector_ is like a query string that lets us find things within an HTML page. It's
+like how SQL finds records in a database. What is the syntax of this _selector_? How
+does the _selector_ navigate through our document to find the DOM nodes that we want
+to work with (update, move, even delete!)?
 
-To understand those `methods`, we first need to talk about how the DOM tree
+To understand those queries or "_selectors_", we first need to talk about how the DOM tree
 (i.e. what we see in the 'Elements' panel of our DevTools) is used to help the
 DOM's `methods` find the right nodes.
-
 
 ### Define the Computer Science Version of "Tree"
 
