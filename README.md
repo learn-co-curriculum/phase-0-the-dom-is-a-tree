@@ -44,6 +44,20 @@ elements. So basically, we can imagine a tree upside down.
 
 ![DOM Tree Graphic](https://curriculum-content.s3.amazonaws.com/skills-front-end-web-development/js-dom-and-events-the-dom-is-a-tree-readme/DOM-model.svg)
 
+The HTML for this "tree" would be:
+
+```html
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>My Title</title>
+  </head>
+  <body>
+    <h1>A heading</h1><a href="http://example.com">Link text</a>
+  </body>
+</html>
+```
+
 ### Describe How the DOM Works as a Tree
 
 Every tree can contain subtrees, which we can treat independently of their
