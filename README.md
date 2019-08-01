@@ -42,7 +42,7 @@ The DOM works basically the same way, except we usually talk about the root as
 being at the top of the DOM and the leaves being the most deeply nested HTML
 elements. So basically, we can imagine a tree upside down.
 
-![DOM Tree Graphic](https://curriculum-content.s3.amazonaws.com/skills-front-end-web-development/js-dom-and-events-the-dom-is-a-tree-readme/DOM-model.svg)
+![DOM Tree Graphic](https://curriculum-content.s3.amazonaws.com/fewpjs/fewpjs-the-dom-tree/Image_6_DomTree.png)
 
 The HTML for this "tree" would be:
 
