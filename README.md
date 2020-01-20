@@ -61,11 +61,10 @@ The HTML for this "tree" would be:
 ### Describe How the DOM Works as a Tree
 
 Every tree can contain subtrees, which we can treat independently of their
-parent trees. Despite just being a small part of a larger tree, they repeat the
-pattern and appearance of the full tree, despite being a smaller part of a tree:
-like branches. Every child has experienced this sense of wonder when they take a
-fallen branch and stick it in the ground and think that they've planted their
-own tree.
+parent trees. They repeat the pattern and appearance of the full tree, despite 
+being a smaller part of a tree, like branches. Every child has experienced this 
+sense of wonder when they take a fallen branch and stick it in the ground and 
+think that they've planted their own tree.
 
 Practically speaking, the DOM begins at `<html>`, but for now we should avoid
 changing what's between the `<head></head>` tags. Most of the time, we will look
@@ -124,22 +123,23 @@ The tree would look like:
 
 ### Ask the DOM to Find or "select" an HTML Element or Elements in the Rendered Page
 
-Our tree is organized so that a node's metadata doesn't make it harder to find its
-children. Not only does providing more information about
-a node via HTML make it more useful, it also makes it easier to find.
+In creating the HTML for a page, including metadata for a node (e.g., a `class` 
+or `id` attribute) will not only provide useful information about that node, but also 
+make it and its children easier to find. The more specific the metadata is, the
+more helpful it is for finding the desired element.
 
 For the following exercises, you can experiment with any page on the
 Internet. It's fun to change "The New York Times" or Facebook.
 
 #### Finding a Node
 
-JavaScript exposes a few ways of finding DOM nodes directly, or via other
-ways, courtesy of the `document` object.
+JavaScript exposes a few ways of finding DOM nodes, either directly or in stages, 
+courtesy of the `document` object.
 
 ##### `document.getElementById()`
 
 This method provides the quickest access to a node, but it requires that we know
-a very specific piece of information — it's `id`. This method can only return one
+a very specific piece of information — its `id`. This method can only return one
 element, since CSS `id`s are expected to be unique.
 
 Given the following DOM tree:
@@ -156,7 +156,8 @@ Notice how the `id` that we pass to `getElementById` is identical to the `id` in
 `<h5 id="greeting">`. 
 
 _Note: You can use either single('') or double("") quotes around
-the `id` within the `id` in `document.getElementById('yourIDGoesHere')`, as long as you use the same kind to open and close them!_
+the `id` within the parentheses in `document.getElementById('yourIDGoesHere')`, 
+as long as you use the same kind to open and close them!_
 
 **Try it out!**
 
