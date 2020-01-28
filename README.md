@@ -124,7 +124,7 @@ The tree would look like:
 ### Ask the DOM to Find or "select" an HTML Element or Elements in the Rendered Page
 
 In creating the HTML for a page, including metadata for a node (e.g., a `class` 
-or `id` attribute) will not only provide useful information about that node, but also 
+or `id` attribute) will not only provide useful information about that node, but will also 
 make it and its children easier to find. The more specific the metadata is, the
 more helpful it is for finding the desired element.
 
