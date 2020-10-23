@@ -294,5 +294,3 @@ user experience.
 ## Resources
 
 - [MDN - Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/fewpjs-the-dom-tree'>The DOM Tree</a> on Learn.co and start learning to code for free.</p>
