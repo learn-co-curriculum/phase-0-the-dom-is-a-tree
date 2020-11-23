@@ -210,10 +210,10 @@ document.getElementsByClassName('yourClassNameHere')`.
 
 #### `document.getElementsByTagName()`
 
-If you _don't_ know an element's `id` or `class`, but you _do_ know its tag
-name (the tag name is the thing between the `<>`, e.g., `'div'`, `'h1'`,
-`header`, `article` etc.), you can find by that instead.  Since tag names 
-aren't unique, this method returns an `HTMLCollection` also.
+You can use this method if you _don't_ know an element's `id` or `class`, 
+but you _do_ know its tag name (the tag name is the thing between the `<>`, 
+e.g., `'div'`, `'h1'`, `header`, `article` etc.).  Since tag names aren't 
+unique, this method returns an `HTMLCollection` also.
 
 **Try it out!**
 
