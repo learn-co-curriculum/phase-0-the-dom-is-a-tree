@@ -125,18 +125,20 @@ The tree would look like:
 
 ### Ask the DOM to Find or "select" an HTML Element or Elements in the Rendered Page
 
-In creating the HTML for a page, including metadata for a node (e.g., a `class`
+In creating the HTML for a page, including _metadata_ for a node (e.g., a `class`
 or `id` attribute) will not only provide useful information about that node, but
 will also make it and its children easier to find. The more specific the
 metadata is, the more helpful it is for finding the desired element.
 
 For the following exercises, you can experiment with any web page you like. It's
-fun to change "The New York Times" or Facebook.
+fun to change _The New York Times_ or Facebook.
 
 #### Finding a Node
 
 JavaScript exposes a few ways of finding DOM nodes, either directly or in
-stages, courtesy of the `document` object.
+stages, courtesy of the `document` object. We will introduce three here, in
+order from most to least specific: `getElementByID()`,
+`getElementsByClassName()`, and `getElementsByTagName()`.
 
 ##### `document.getElementById()`
 
@@ -157,7 +159,7 @@ We could find the `h5` element with `document.getElementById('greeting')`.
 Notice how the `id` that we pass to `getElementById` is identical to the `id` in
 `<h5 id="greeting">`.
 
-**Note:** You can use either single('') or double("") quotes around the `id`
+**Note:** You can use either single(`''`) or double(`""`) quotes around the `id`
 within the parentheses in `document.getElementById('yourIDGoesHere')`, as long
 as you use the same kind to open and close them!
 
@@ -229,9 +231,8 @@ You can iterate through these elements using a simple `for` loop as well.
 
 #### Finding a Node Without Knowing Anything About It
 
-What if we know next to nothing about an element? Or what if we're just
-interested in finding out more about the child nodes of a given element? This is
-where our knowledge of trees comes in handy!
+What if we don't have an `id` or `className` to help us find a particular
+element? This is where our knowledge of trees comes in handy!
 
 Given the following DOM tree:
 
@@ -272,11 +273,11 @@ We can get the children of `main` using `main.children`. This returns an
 const secondChild = main.children[1];
 ```
 
-Next, we can get our `<p>` element:
+Next, we can get our `<p>` element. To constrain the search to just the children
+of the second child, we can call `getElementsByTagName()` **directly on
+`secondChild`**:
 
 ```javascript
-// we can call getElementsByTagName() on our secondDiv
-//  _element_ to constrain the search to _its_ children!
 const p = secondChild.getElementsByTagName('p')[0];
 ```
 
@@ -286,17 +287,17 @@ And lastly we can change an attribute on the `p` node:
 p.textContent = "Goodbye!"
 ```
 
-Obviously, this way of accessing that text isn't efficient and won't work on all
-pages but it does a good job of demonstrating the basic tools available to us
-for finding and manipulating HTML elements.
+Obviously, this way of accessing that text isn't very efficient and won't work
+on all pages but it does a good job of demonstrating the basic tools available
+to us for finding and manipulating HTML elements.
 
 ## Conclusion
 
 Understanding the tree structure of the DOM helps us navigate all kinds of
 trees. In subtrees and branches we can find the nodes we need by IDs, class
-names or tag names. Once we've selected our elements, we can use JavaScript to
-manipulate them. By using these techniques, we can start to build a more rich
-user experience.
+names or tag names, or by using element attributes like `children`. Once we've
+selected our elements, we can use JavaScript to manipulate them. By using these
+techniques, we can start to build a richer user experience.
 
 ## Resources
 
