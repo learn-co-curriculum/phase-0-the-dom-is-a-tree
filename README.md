@@ -36,7 +36,7 @@ help the DOM's `methods` find the right nodes.
 
 What do we mean when we say that the DOM is a tree? Trees make a good metaphor
 for the DOM because almost everyone has seen a tree. Starting at the bottom, you
-can climb up the tree and out to the farthest &mdash; and smallest &mdash;
+can climb up the tree and out to the farthest — and smallest —
 branches. The thicker a branch is, the stronger its connections are and the more
 it holds within it. Likewise, the thinner a branch is, the less it holds inside.
 
@@ -143,7 +143,7 @@ order from most to least specific: `getElementByID()`,
 ##### `document.getElementById()`
 
 This method provides the quickest access to a node, but it requires that we know
-a very specific piece of information &mdash; its `id`. This method can only
+a very specific piece of information — its `id`. This method can only
 return one element, since CSS `id`s are expected to be unique.
 
 Given the following DOM tree:
