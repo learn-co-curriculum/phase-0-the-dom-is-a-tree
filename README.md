@@ -5,7 +5,7 @@
 - Describe how the DOM works as a tree
 - Define the computer science version of "Tree"
 - Ask the DOM to find or "select" an HTML element or elements in the rendered
-   page
+  page
 
 ## Introduction
 
@@ -19,8 +19,8 @@ DOM programming is using JavaScript to:
 In previous lessons we were given the command to find the HTML element we
 wanted:
 
-```javascript
-document.querySelector(selector)
+```js
+document.querySelector(selector);
 ```
 
 The _selector_ is like a query string that lets us find things within an HTML
@@ -49,13 +49,14 @@ elements. So basically, we can imagine a tree upside down.
 The HTML for this "tree" would be:
 
 ```html
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
     <title>My Title</title>
   </head>
   <body>
-    <h1>A heading</h1><a href="http://example.com">Link text</a>
+    <h1>A heading</h1>
+    <a href="http://example.com">Link text</a>
   </body>
 </html>
 ```
@@ -73,7 +74,7 @@ changing what's between the `<head></head>` tags. Most of the time, we will look
 at the DOM subtree with its root at `<body>` and only change things that will be
 visible on the page. We might also deal with subtrees. For example, if we have
 
-``` html
+```html
 <body>
   <div>
     <p>Hi!</p>
@@ -87,7 +88,7 @@ visible on the page. We might also deal with subtrees. For example, if we have
 
 Our tree looks like this:
 
-``` shell
+```txt
         body
         /  \
       div   div
@@ -99,7 +100,7 @@ Our tree looks like this:
 
 Similarly, if we had a DOM subtree that looked like
 
-``` html
+```html
 <div>
   <div>
     <h1>Hello!</h1>
@@ -113,7 +114,7 @@ Similarly, if we had a DOM subtree that looked like
 
 The tree would look like:
 
-``` shell
+```txt
          div
         /  \
       div   div
@@ -123,7 +124,7 @@ The tree would look like:
  "Hello!"     "Sup?"
 ```
 
-### Ask the DOM to Find or "select" an HTML Element or Elements in the Rendered Page
+### Finding HTML Elements
 
 In creating the HTML for a page, including _metadata_ for a node (e.g., a `class`
 or `id` attribute) will not only provide useful information about that node, but
@@ -182,7 +183,7 @@ structure containing a list of elements. You can iterate over an
 
 Given the following DOM tree:
 
-``` html
+```html
 <!-- the `className` attribute is called `class` in HTML  -->
 <div>
   <div class="banner">
@@ -214,14 +215,14 @@ doing so much easier if you save the results of
 `document.getElementsByClassName()` to a variable:
 
 ```js
-const elements = document.getElementsByClassName('yourClassNameHere');
+const elements = document.getElementsByClassName("yourClassNameHere");
 ```
 
 #### `document.getElementsByTagName()`
 
 You can use this method if you _don't_ know an element's `id` or `class`, but
 you _do_ know its tag name (the tag name is the thing between the `<>`, e.g.,
-`'div'`, `'h1'`, `header`, `article` etc.).  Since tag names aren't unique, this
+`'div'`, `'h1'`, `header`, `article` etc.). Since tag names aren't unique, this
 method also returns an `HTMLCollection`.
 
 **Try it out!**
@@ -262,14 +263,14 @@ Here we're going to use a mix of different `methods` to accomplish the goal.
 
 Let's start by getting the `<main>` element
 
-```javascript
-const main = document.getElementsByTagName('main')[0];
+```js
+const main = document.getElementsByTagName("main")[0];
 ```
 
 We can get the children of `main` using `main.children`. This returns an
 `HTMLCollection`, so we can get the second child with `main.children[1]`.
 
-```javascript
+```js
 const secondChild = main.children[1];
 ```
 
@@ -277,14 +278,14 @@ Next, we can get our `<p>` element. To constrain the search to just the children
 of the second child, we can call `getElementsByTagName()` **directly on
 `secondChild`**:
 
-```javascript
-const p = secondChild.getElementsByTagName('p')[0];
+```js
+const p = secondChild.getElementsByTagName("p")[0];
 ```
 
 And lastly we can change an attribute on the `p` node:
 
-```javascript
-p.textContent = "Goodbye!"
+```js
+p.textContent = "Goodbye!";
 ```
 
 Obviously, this way of accessing that text isn't very efficient and won't work
