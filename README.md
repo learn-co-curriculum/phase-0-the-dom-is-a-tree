@@ -222,7 +222,7 @@ const elements = document.getElementsByClassName("yourClassNameHere");
 
 You can use this method if you _don't_ know an element's `id` or `class`, but
 you _do_ know its tag name (the tag name is the thing between the `<>`, e.g.,
-`'div'`, `'h1'`, `header`, `article` etc.). Since tag names aren't unique, this
+`div`, `h1`, `header`, `article` etc.). Since tag names aren't unique, this
 method also returns an `HTMLCollection`.
 
 **Try it out!**
