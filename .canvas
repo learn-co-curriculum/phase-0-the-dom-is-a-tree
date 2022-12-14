@@ -1,13 +1,5 @@
 ---
 :lessons:
-- :id: 68405
-  :course_id: 3280
-  :canvas_url: https://learning.flatironschool.com/courses/3280/pages/the-dom-is-a-tree
-  :type: page
-- :id: 68616
-  :course_id: 3297
-  :canvas_url: https://learning.flatironschool.com/courses/3297/pages/the-dom-is-a-tree
-  :type: page
 - :id: 233759
   :course_id: 6602
   :canvas_url: https://learning.flatironschool.com/courses/6602/pages/the-dom-is-a-tree
