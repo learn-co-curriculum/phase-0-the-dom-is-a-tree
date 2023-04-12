@@ -36,9 +36,9 @@ help the DOM's `methods` find the right nodes.
 
 What do we mean when we say that the DOM is a tree? Trees make a good metaphor
 for the DOM because almost everyone has seen a tree. Starting at the bottom, you
-can climb up the tree and out to the farthest — and smallest —
-branches. The thicker a branch is, the stronger its connections are and the more
-it holds within it. Likewise, the thinner a branch is, the less it holds inside.
+can climb up the tree and out to the farthest — and smallest — branches. The
+thicker a branch is, the stronger its connections are and the more it holds
+within it. Likewise, the thinner a branch is, the less it holds inside.
 
 The DOM works basically the same way, except we usually talk about the root as
 being at the top of the DOM and the leaves being the most deeply nested HTML
@@ -63,16 +63,11 @@ The HTML for this "tree" would be:
 
 ### Describe How the DOM Works as a Tree
 
-Every tree can contain subtrees, which we can treat independently of their
-parent trees. They repeat the pattern and appearance of the full tree, despite
-being a smaller part of a tree, like branches. Every child has experienced this
-sense of wonder when they take a fallen branch and stick it in the ground and
-think that they've planted their own tree.
-
 Practically speaking, the DOM begins at `<html>`, but for now we should avoid
 changing what's between the `<head></head>` tags. Most of the time, we will look
 at the DOM subtree with its root at `<body>` and only change things that will be
-visible on the page. We might also deal with subtrees. For example, if we have
+visible on the page. We might also deal with subtrees of that subtree. For
+example, if we have
 
 ```html
 <body>
@@ -86,7 +81,7 @@ visible on the page. We might also deal with subtrees. For example, if we have
 </body>
 ```
 
-Our tree looks like this:
+Our tree could be represented like this:
 
 ```txt
         body
@@ -138,14 +133,14 @@ fun to change _The New York Times_ or Facebook.
 
 JavaScript exposes a few ways of finding DOM nodes, either directly or in
 stages, courtesy of the `document` object. We will introduce three here, in
-order from most to least specific: `getElementByID()`,
+order from most to least specific: `getElementById()`,
 `getElementsByClassName()`, and `getElementsByTagName()`.
 
 ##### `document.getElementById()`
 
 This method provides the quickest access to a node, but it requires that we know
-a very specific piece of information — its `id`. This method can only
-return one element, since CSS `id`s are expected to be unique.
+a very specific piece of information — its `id`. This method can only return one
+element, since HTML `id`s are expected to be unique.
 
 Given the following DOM tree:
 
@@ -232,7 +227,7 @@ You can iterate through these elements using a simple `for` loop as well.
 
 #### Finding a Node Without Knowing Anything About It
 
-What if we don't have an `id` or `className` to help us find a particular
+What if we don't have an `id` or `className` to help us access a particular
 element? This is where our knowledge of trees comes in handy!
 
 Given the following DOM tree:
@@ -291,6 +286,20 @@ p.textContent = "Goodbye!";
 Obviously, this way of accessing that text isn't very efficient and won't work
 on all pages but it does a good job of demonstrating the basic tools available
 to us for finding and manipulating HTML elements.
+
+**Challenge**: As practice, see if you can you come up with a way to accomplish
+the task with three lines of code instead of four.
+
+<details><summary><b>Answer</b></summary>
+<p>Here's one way to do it:</p>
+<pre>
+const pElements = document.getElementsByTagName("p");
+const p = pElements[1];
+p.textContent = "Goodbye!";
+</pre>
+<p>If you came up with a different way, that's fine!</p>
+<p><strong>Note</strong>: If you wanted to, you could continue to pare it down, getting it down to two lines of code, or even one! But we don't necessarily recommend that because it makes the code harder to read and harder to debug. Saving intermediate results into variables makes it very clear exactly what the code is doing, especially if you use meaningful variable names! It also allows you to check each of the intermediate values as you go, to make sure you're getting what you need.</p>
+</details>
 
 ## Conclusion
 
